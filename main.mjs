@@ -1,4 +1,3 @@
-import fs from "fs/promises"
 import parse from "./parser.mjs"
 import stringify from "./stringifier.mjs"
 
