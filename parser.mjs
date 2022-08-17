@@ -71,7 +71,7 @@ export default function parse(s, types) {
 					i++ // }
 					while(i < s.length && s[i].trim() == "") i++
 					if(i < s.length) {
-						throw new SyntaxError(`Unexpected token ${c} in YSON at position ${i}`)
+						throw new SyntaxError(`Unexpected token ${s[i]} in YSON at position ${i}`)
 					} else {
 						return ci.v
 					}
@@ -153,7 +153,7 @@ function parseValue(ci, types) {
 	if(!type) return ci.v
 
 	// select type, call fromYSON...
-	if(["Map","Set"].includes(type)) {
+	if(["Map","Set","ArrayBuffer"].includes(type)) {
 		return parseNativeType(type, ci.v)
 	} else if(types.has(type)) {
 		let t = types.get(type)
@@ -206,6 +206,10 @@ function parseNativeType(type, v) {
 			s.add(i)
 		}
 		return s
+
+	} else if(type == "ArrayBuffer" && v instanceof Array) {
+
+		return new Uint8Array(v).buffer
 
 	}
 	return v
