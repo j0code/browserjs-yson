@@ -9,15 +9,12 @@ Main benefits:
 
 For the node.js version, see [node-yson](https://github.com/j0code/node-yson)
 
-## Install
-> -- TODO --
-
 ## Usage
 
 ### Module (ECMAScript 2015)
 > -- TODO --
 ```js
-import YSON from "TODO"
+import YSON from "https://j0code.github.io/browserjs-yson/main.mjs"
 
 // same as JSON
 let s = YSON.stringify(someObject) // does not support reviver
