@@ -80,7 +80,7 @@ function stringifyType(v) {
 		} else if(v.toJSON && v.toJSON instanceof Function) {
 			v = v.toJSON()
 		}
-		s = stringifyValue(v)
+		s = `{${stringifyObject(v)}}`
 		break
 	}
 
@@ -94,7 +94,6 @@ function stringifyType(v) {
 }
 
 // TODO:
-// - distinguish Objects, Arrays, Strings, Numbers, Booleans, Null
-// - Types
 // - Options (e.g. space, use hex nums, store Maps as Arrays)
 // - add more native types (Date etc.)
+// - disallow ":" in keys (or convert to \u0000 value)
