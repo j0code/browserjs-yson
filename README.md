@@ -1,5 +1,8 @@
-# YScript Object Notation
+# YScript Object Notation (deprecated)
 YSON implementation for JavaScript (Browser)
+
+## 🔥 DEPRECATED 🔥
+⚠ Use [@j0code/yson](https://github.com/j0code/yson) instead
 
 YSON is similar to JSON.
 Main benefits:
